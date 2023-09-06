@@ -1,0 +1,31 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.downloadFiles {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+.content {
+  width: 110px;
+  height: 110px;
+}
+
+.content__dowload {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  border: 2px solid #3c1053;
+  border-radius: 5px;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  color: #3c1053;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
