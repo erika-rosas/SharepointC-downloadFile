@@ -1197,10 +1197,12 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 __webpack_require__(/*! ./DownloadFiles.module.css */ "IVx6");
 var styles = {
-    downloadFiles: 'downloadFiles_a14399a1',
-    teams: 'teams_a14399a1',
-    content: 'content_a14399a1',
-    content__dowload: 'content__dowload_a14399a1'
+    downloadFiles: 'downloadFiles_859ba973',
+    teams: 'teams_859ba973',
+    content: 'content_859ba973',
+    content__dowload: 'content__dowload_859ba973',
+    content_line_dowload: 'content_line_dowload_859ba973',
+    p_3: 'p_3_859ba973'
 };
 /* harmony default export */ __webpack_exports__["default"] = (styles);
 /* tslint:enable */ 
@@ -8180,7 +8182,7 @@ function useTarget(target, hostElement) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "JPst");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".downloadFiles_a14399a1{color:\"[theme:bodyText, default: #323130]\";color:var(--bodyText);overflow:hidden;padding:1em}.downloadFiles_a14399a1.teams_a14399a1{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}.content_a14399a1{height:110px;width:110px}.content__dowload_a14399a1{-ms-flex-pack:justify;-ms-flex-align:center;align-items:center;border:2px solid #3c1053;border-radius:5px;color:#3c1053;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;font-weight:600;justify-content:space-between;padding:10px;row-gap:5px;text-decoration:none}", ""]);
+exports.push([module.i, ".downloadFiles_859ba973{color:\"[theme:bodyText, default: #323130]\";color:var(--bodyText);overflow:hidden;padding:1em}.downloadFiles_859ba973.teams_859ba973{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}.content_859ba973{height:110px;width:110px}.content__dowload_859ba973{-ms-flex-pack:justify;-ms-flex-align:center;align-items:center;border:2px solid #3c1053;-ms-flex-direction:column;flex-direction:column;justify-content:space-between;row-gap:5px}.content__dowload_859ba973,.content_line_dowload_859ba973{border-radius:5px;color:#3c1053;display:-ms-flexbox;display:flex;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;font-weight:600;padding:10px;text-decoration:none}.content_line_dowload_859ba973{-ms-flex-pack:start;font-size:15px;justify-content:flex-start}.p_3_859ba973{padding-bottom:5px;padding-left:5px}", ""]);
 // Exports
 module.exports = exports;
 
@@ -9800,20 +9802,27 @@ var DownloadFiles = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     DownloadFiles.prototype.render = function () {
-        var _a = this.props, hasTeamsContext = _a.hasTeamsContext, collectionData = _a.collectionData;
-        console.log(collectionData);
+        var _a = this.props, hasTeamsContext = _a.hasTeamsContext, collectionData = _a.collectionData, absoluteUrl = _a.absoluteUrl, dirFile = _a.dirFile;
         if (collectionData !== undefined) {
-            fileName = collectionData[0].link;
+            fileName = "".concat(absoluteUrl).concat(dirFile).concat(collectionData[0].link, " ");
         }
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("section", { className: "".concat(_DownloadFiles_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].downloadFiles, " ").concat(hasTeamsContext ? _DownloadFiles_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].teams : "") },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _DownloadFiles_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].content },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://intellego365.sharepoint.com/sites/CentralAxity/M%C3%A9xico/Consultoria2/SiteAssets/files/".concat(fileName, ".pdf"), download: true, className: _DownloadFiles_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].content__dowload },
+                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "".concat(fileName), download: true, className: _DownloadFiles_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].content__dowload },
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null,
                             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", { xmlns: "http://www.w3.org/2000/svg", width: "30", height: "30", fill: "none", className: "bi bi-download", viewBox: "0 0 16 16", stroke: "#3C1053" },
                                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", { stroke: "#3C1053", d: "M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" }),
                                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", { stroke: "#3C1053", d: "M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" }))),
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, "Descargar"))))));
+                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, "Descargar")))),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "".concat(fileName), download: true, className: "".concat(_DownloadFiles_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].content_line_dowload) },
+                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", { xmlns: "http://www.w3.org/2000/svg", width: "20", height: "20", fill: "none", className: "bi bi-download", viewBox: "0 0 16 16", stroke: "#3C1053" },
+                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", { stroke: "#3C1053", d: "M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" }),
+                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", { stroke: "#3C1053", d: "M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", { className: "".concat(_DownloadFiles_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].p_3) }, "Descargar"))))));
     };
     return DownloadFiles;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
@@ -24152,63 +24161,24 @@ var DownloadFilesWebPart = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this._isDarkTheme = false;
         _this._environmentMessage = "";
-        _this._link = "";
+        _this.dirFile = "/SiteAssets/files/";
         return _this;
     }
     DownloadFilesWebPart.prototype.render = function () {
         var element = react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_DownloadFiles__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            nameFile: this._link,
+            absoluteUrl: this.context.pageContext.web.absoluteUrl,
             isDarkTheme: this._isDarkTheme,
             environmentMessage: this._environmentMessage,
             hasTeamsContext: !!this.context.sdks.microsoftTeams,
             userDisplayName: this.context.pageContext.user.displayName,
             collectionData: this.properties.collectionData,
+            dirFile: this.dirFile,
         });
         react_dom__WEBPACK_IMPORTED_MODULE_1__["render"](element, this.domElement);
     };
     DownloadFilesWebPart.prototype.onInit = function () {
-        this._link = this._getUrlLink();
         return Promise.resolve();
     };
-    DownloadFilesWebPart.prototype._getUrlLink = function () {
-        var dirFile = "/SiteAssets/files/"; // Reemplaza con el nombre real de la lista
-        var endpointFile = "".concat(this.context.pageContext.web.absoluteUrl).concat(dirFile, " }").concat(this.properties.nameFile, " ");
-        console.log("name", this.properties.nameFile);
-        return endpointFile;
-    };
-    // private _getEnvironmentMessage(): Promise<string> {
-    //   if (!!this.context.sdks.microsoftTeams) {
-    //     // running in Teams, office.com or Outlook
-    //     return this.context.sdks.microsoftTeams.teamsJs.app.getContext().then((context) => {
-    //       let environmentMessage: string = "";
-    //       switch (context.app.host.name) {
-    //         case "Office": // running in Office
-    //           environmentMessage = this.context.isServedFromLocalhost
-    //             ? strings.AppLocalEnvironmentOffice
-    //             : strings.AppOfficeEnvironment;
-    //           break;
-    //         case "Outlook": // running in Outlook
-    //           environmentMessage = this.context.isServedFromLocalhost
-    //             ? strings.AppLocalEnvironmentOutlook
-    //             : strings.AppOutlookEnvironment;
-    //           break;
-    //         case "Teams": // running in Teams
-    //           environmentMessage = this.context.isServedFromLocalhost
-    //             ? strings.AppLocalEnvironmentTeams
-    //             : strings.AppTeamsTabEnvironment;
-    //           break;
-    //         default:
-    //           throw new Error("Unknown host");
-    //       }
-    //       return environmentMessage;
-    //     });
-    //   }
-    //   return Promise.resolve(
-    //     this.context.isServedFromLocalhost
-    //       ? strings.AppLocalEnvironmentSharePoint
-    //       : strings.AppSharePointEnvironment
-    //   );
-    // }
     DownloadFilesWebPart.prototype.onThemeChanged = function (currentTheme) {
         if (!currentTheme) {
             return;
@@ -39655,48 +39625,61 @@ function _createNode() {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
-// Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-// See LICENSE in the project root for license information.
+/**
+ * An IThemingInstruction can specify a rawString to be preserved or a theme slot and a default value
+ * to use if that slot is not specified by the theme.
+ */
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.splitStyles = exports.detokenize = exports.clearStyles = exports.loadTheme = exports.flush = exports.configureRunMode = exports.configureLoadStyles = exports.loadStyles = void 0;
+// IE needs to inject styles using cssText. However, we need to evaluate this lazily, so this
+// value will initialize as undefined, and later will be set once on first loadStyles injection.
+var _injectStylesWithCssText;
 // Store the theming state in __themeState__ global scope for reuse in the case of duplicate
 // load-themed-styles hosted on the page.
-const _root = typeof window === 'undefined' ? global : window; // eslint-disable-line @typescript-eslint/no-explicit-any
-// Nonce string to inject into script tag if one provided. This is used in CSP (Content Security Policy).
-const _styleNonce = _root && _root.CSPSettings && _root.CSPSettings.nonce;
-const _themeState = initializeThemeState();
+var _root = (typeof window === 'undefined') ? global : window; // tslint:disable-line:no-any
+var _themeState = initializeThemeState();
 /**
  * Matches theming tokens. For example, "[theme: themeSlotName, default: #FFF]" (including the quotes).
  */
-const _themeTokenRegex = /[\'\"]\[theme:\s*(\w+)\s*(?:\,\s*default:\s*([\\"\']?[\.\,\(\)\#\-\s\w]*[\.\,\(\)\#\-\w][\"\']?))?\s*\][\'\"]/g;
-const now = () => typeof performance !== 'undefined' && !!performance.now ? performance.now() : Date.now();
+// tslint:disable-next-line:max-line-length
+var _themeTokenRegex = /[\'\"]\[theme:\s*(\w+)\s*(?:\,\s*default:\s*([\\"\']?[\.\,\(\)\#\-\s\w]*[\.\,\(\)\#\-\w][\"\']?))?\s*\][\'\"]/g;
+/** Maximum style text length, for supporting IE style restrictions. */
+var MAX_STYLE_CONTENT_SIZE = 10000;
+var now = function () { return (typeof performance !== 'undefined' && !!performance.now) ? performance.now() : Date.now(); };
 function measure(func) {
-    const start = now();
+    var start = now();
     func();
-    const end = now();
+    var end = now();
     _themeState.perf.duration += end - start;
 }
 /**
  * initialize global state object
  */
 function initializeThemeState() {
-    let state = _root.__themeState__ || {
+    var state = _root.__themeState__ || {
         theme: undefined,
         lastStyleElement: undefined,
         registeredStyles: []
     };
     if (!state.runState) {
-        state = Object.assign(Object.assign({}, state), { perf: {
+        state = __assign({}, (state), { perf: {
                 count: 0,
                 duration: 0
             }, runState: {
                 flushTimer: 0,
-                mode: 0 /* Mode.sync */,
+                mode: 0 /* sync */,
                 buffer: []
             } });
     }
     if (!state.registeredThemableStyles) {
-        state = Object.assign(Object.assign({}, state), { registeredThemableStyles: [] });
+        state = __assign({}, (state), { registeredThemableStyles: [] });
     }
     _root.__themeState__ = state;
     return state;
@@ -39707,11 +39690,15 @@ function initializeThemeState() {
  * @param {string | ThemableArray} styles Themable style text to register.
  * @param {boolean} loadAsync When true, always load styles in async mode, irrespective of current sync mode.
  */
-function loadStyles(styles, loadAsync = false) {
-    measure(() => {
-        const styleParts = Array.isArray(styles) ? styles : splitStyles(styles);
-        const { mode, buffer, flushTimer } = _themeState.runState;
-        if (loadAsync || mode === 1 /* Mode.async */) {
+function loadStyles(styles, loadAsync) {
+    if (loadAsync === void 0) { loadAsync = false; }
+    measure(function () {
+        var styleParts = Array.isArray(styles) ? styles : splitStyles(styles);
+        if (_injectStylesWithCssText === undefined) {
+            _injectStylesWithCssText = shouldUseCssText();
+        }
+        var _a = _themeState.runState, mode = _a.mode, buffer = _a.buffer, flushTimer = _a.flushTimer;
+        if (loadAsync || mode === 1 /* async */) {
             buffer.push(styleParts);
             if (!flushTimer) {
                 _themeState.runState.flushTimer = asyncLoadStyles();
@@ -39744,10 +39731,10 @@ exports.configureRunMode = configureRunMode;
  * external code can call flush to synchronously force processing of currently buffered styles
  */
 function flush() {
-    measure(() => {
-        const styleArrays = _themeState.runState.buffer.slice();
+    measure(function () {
+        var styleArrays = _themeState.runState.buffer.slice();
         _themeState.runState.buffer = [];
-        const mergedStyleArray = [].concat.apply([], styleArrays);
+        var mergedStyleArray = [].concat.apply([], styleArrays);
         if (mergedStyleArray.length > 0) {
             applyThemableStyles(mergedStyleArray);
         }
@@ -39758,9 +39745,7 @@ exports.flush = flush;
  * register async loadStyles
  */
 function asyncLoadStyles() {
-    // Use "self" to distinguish conflicting global typings for setTimeout() from lib.dom.d.ts vs Jest's @types/node
-    // https://github.com/jestjs/jest/issues/14418
-    return self.setTimeout(() => {
+    return setTimeout(function () {
         _themeState.runState.flushTimer = 0;
         flush();
     }, 0);
@@ -39776,7 +39761,9 @@ function applyThemableStyles(stylesArray, styleRecord) {
         _themeState.loadStyles(resolveThemableArray(stylesArray).styleString, stylesArray);
     }
     else {
-        registerStyles(stylesArray);
+        _injectStylesWithCssText ?
+            registerStylesIE(stylesArray, styleRecord) :
+            registerStyles(stylesArray);
     }
 }
 /**
@@ -39792,23 +39779,24 @@ function loadTheme(theme) {
 exports.loadTheme = loadTheme;
 /**
  * Clear already registered style elements and style records in theme_State object
- * @param option - specify which group of registered styles should be cleared.
+ * @option: specify which group of registered styles should be cleared.
  * Default to be both themable and non-themable styles will be cleared
  */
-function clearStyles(option = 3 /* ClearStyleOptions.all */) {
-    if (option === 3 /* ClearStyleOptions.all */ || option === 2 /* ClearStyleOptions.onlyNonThemable */) {
+function clearStyles(option) {
+    if (option === void 0) { option = 3 /* all */; }
+    if (option === 3 /* all */ || option === 2 /* onlyNonThemable */) {
         clearStylesInternal(_themeState.registeredStyles);
         _themeState.registeredStyles = [];
     }
-    if (option === 3 /* ClearStyleOptions.all */ || option === 1 /* ClearStyleOptions.onlyThemable */) {
+    if (option === 3 /* all */ || option === 1 /* onlyThemable */) {
         clearStylesInternal(_themeState.registeredThemableStyles);
         _themeState.registeredThemableStyles = [];
     }
 }
 exports.clearStyles = clearStyles;
 function clearStylesInternal(records) {
-    records.forEach((styleRecord) => {
-        const styleElement = styleRecord && styleRecord.styleElement;
+    records.forEach(function (styleRecord) {
+        var styleElement = styleRecord && styleRecord.styleElement;
         if (styleElement && styleElement.parentElement) {
             styleElement.parentElement.removeChild(styleElement);
         }
@@ -39819,12 +39807,13 @@ function clearStylesInternal(records) {
  */
 function reloadStyles() {
     if (_themeState.theme) {
-        const themableStyles = [];
-        for (const styleRecord of _themeState.registeredThemableStyles) {
+        var themableStyles = [];
+        for (var _i = 0, _a = _themeState.registeredThemableStyles; _i < _a.length; _i++) {
+            var styleRecord = _a[_i];
             themableStyles.push(styleRecord.themableStyle);
         }
         if (themableStyles.length > 0) {
-            clearStyles(1 /* ClearStyleOptions.onlyThemable */);
+            clearStyles(1 /* onlyThemable */);
             applyThemableStyles([].concat.apply([], themableStyles));
         }
     }
@@ -39845,26 +39834,21 @@ exports.detokenize = detokenize;
  * @param {ThemableArray} splitStyleArray ThemableArray to resolve and join.
  */
 function resolveThemableArray(splitStyleArray) {
-    const { theme } = _themeState;
-    let themable = false;
+    var theme = _themeState.theme;
+    var themable = false;
     // Resolve the array of theming instructions to an array of strings.
     // Then join the array to produce the final CSS string.
-    const resolvedArray = (splitStyleArray || []).map((currentValue) => {
-        const themeSlot = currentValue.theme;
+    var resolvedArray = (splitStyleArray || []).map(function (currentValue) {
+        var themeSlot = currentValue.theme;
         if (themeSlot) {
             themable = true;
             // A theming annotation. Resolve it.
-            const themedValue = theme ? theme[themeSlot] : undefined;
-            const defaultValue = currentValue.defaultValue || 'inherit';
+            var themedValue = theme ? theme[themeSlot] : undefined;
+            var defaultValue = currentValue.defaultValue || 'inherit';
             // Warn to console if we hit an unthemed value even when themes are provided, but only if "DEBUG" is true.
             // Allow the themedValue to be undefined to explicitly request the default value.
-            if (theme &&
-                !themedValue &&
-                console &&
-                !(themeSlot in theme) &&
-                "boolean" !== 'undefined' &&
-                true) {
-                console.warn(`Theming value not provided for "${themeSlot}". Falling back to "${defaultValue}".`);
+            if (theme && !themedValue && console && !(themeSlot in theme) && "boolean" !== 'undefined' && true) {
+                console.warn("Theming value not provided for \"" + themeSlot + "\". Falling back to \"" + defaultValue + "\".");
             }
             return themedValue || defaultValue;
         }
@@ -39883,12 +39867,12 @@ function resolveThemableArray(splitStyleArray) {
  * @param {string} styles Tokenized styles to split.
  */
 function splitStyles(styles) {
-    const result = [];
+    var result = [];
     if (styles) {
-        let pos = 0; // Current position in styles.
-        let tokenMatch;
-        while ((tokenMatch = _themeTokenRegex.exec(styles))) {
-            const matchIndex = tokenMatch.index;
+        var pos = 0; // Current position in styles.
+        var tokenMatch = void 0; // tslint:disable-line:no-null-keyword
+        while (tokenMatch = _themeTokenRegex.exec(styles)) {
+            var matchIndex = tokenMatch.index;
             if (matchIndex > pos) {
                 result.push({
                     rawString: styles.substring(pos, matchIndex)
@@ -39916,26 +39900,14 @@ exports.splitStyles = splitStyles;
  * @param {IStyleRecord} styleRecord May specify a style Element to update.
  */
 function registerStyles(styleArray) {
-    if (typeof document === 'undefined') {
-        return;
-    }
-    const head = document.getElementsByTagName('head')[0];
-    const styleElement = document.createElement('style');
-    const { styleString, themable } = resolveThemableArray(styleArray);
-    styleElement.setAttribute('data-load-themed-styles', 'true');
-    if (_styleNonce) {
-        styleElement.setAttribute('nonce', _styleNonce);
-    }
+    var head = document.getElementsByTagName('head')[0];
+    var styleElement = document.createElement('style');
+    var _a = resolveThemableArray(styleArray), styleString = _a.styleString, themable = _a.themable;
+    styleElement.type = 'text/css';
     styleElement.appendChild(document.createTextNode(styleString));
     _themeState.perf.count++;
     head.appendChild(styleElement);
-    const ev = document.createEvent('HTMLEvents');
-    ev.initEvent('styleinsert', true /* bubbleEvent */, false /* cancelable */);
-    ev.args = {
-        newStyle: styleElement
-    };
-    document.dispatchEvent(ev);
-    const record = {
+    var record = {
         styleElement: styleElement,
         themableStyle: styleArray
     };
@@ -39946,7 +39918,59 @@ function registerStyles(styleArray) {
         _themeState.registeredStyles.push(record);
     }
 }
+/**
+ * Registers a set of style text, for IE 9 and below, which has a ~30 style element limit so we need
+ * to register slightly differently.
+ * @param {ThemableArray} styleArray Array of IThemingInstruction objects to register.
+ * @param {IStyleRecord} styleRecord May specify a style Element to update.
+ */
+function registerStylesIE(styleArray, styleRecord) {
+    var head = document.getElementsByTagName('head')[0];
+    var registeredStyles = _themeState.registeredStyles;
+    var lastStyleElement = _themeState.lastStyleElement;
+    var stylesheet = lastStyleElement ? lastStyleElement.styleSheet : undefined;
+    var lastStyleContent = stylesheet ? stylesheet.cssText : '';
+    var lastRegisteredStyle = registeredStyles[registeredStyles.length - 1];
+    var resolvedStyleText = resolveThemableArray(styleArray).styleString;
+    if (!lastStyleElement || (lastStyleContent.length + resolvedStyleText.length) > MAX_STYLE_CONTENT_SIZE) {
+        lastStyleElement = document.createElement('style');
+        lastStyleElement.type = 'text/css';
+        if (styleRecord) {
+            head.replaceChild(lastStyleElement, styleRecord.styleElement);
+            styleRecord.styleElement = lastStyleElement;
+        }
+        else {
+            head.appendChild(lastStyleElement);
+        }
+        if (!styleRecord) {
+            lastRegisteredStyle = {
+                styleElement: lastStyleElement,
+                themableStyle: styleArray
+            };
+            registeredStyles.push(lastRegisteredStyle);
+        }
+    }
+    lastStyleElement.styleSheet.cssText += detokenize(resolvedStyleText);
+    Array.prototype.push.apply(lastRegisteredStyle.themableStyle, styleArray); // concat in-place
+    // Preserve the theme state.
+    _themeState.lastStyleElement = lastStyleElement;
+}
+/**
+ * Checks to see if styleSheet exists as a property off of a style element.
+ * This will determine if style registration should be done via cssText (<= IE9) or not
+ */
+function shouldUseCssText() {
+    var useCSSText = false;
+    if (typeof document !== 'undefined') {
+        var emptyStyle = document.createElement('style');
+        emptyStyle.type = 'text/css';
+        useCSSText = !!emptyStyle.styleSheet;
+    }
+    return useCSSText;
+}
+
 //# sourceMappingURL=index.js.map
+
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../sp-build-web/node_modules/webpack/buildin/global.js */ "vicT")))
 
 /***/ }),

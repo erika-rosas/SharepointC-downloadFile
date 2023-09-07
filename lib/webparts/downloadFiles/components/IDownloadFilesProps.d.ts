@@ -1,9 +1,15 @@
 export interface IDownloadFilesProps {
-    nameFile: string;
+    absoluteUrl: string;
     isDarkTheme: boolean;
     environmentMessage: string;
     hasTeamsContext: boolean;
     userDisplayName: string;
-    collectionData: any[];
+    collectionData: IcollectionData[];
+    dirFile: string;
+}
+export interface IcollectionData {
+    nameFile: string;
+    link: string;
+    viewMode: number;
 }
 //# sourceMappingURL=IDownloadFilesProps.d.ts.map

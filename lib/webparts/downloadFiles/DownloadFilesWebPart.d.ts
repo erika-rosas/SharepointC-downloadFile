@@ -2,17 +2,17 @@ import { Version } from "@microsoft/sp-core-library";
 import { IPropertyPaneConfiguration } from "@microsoft/sp-property-pane";
 import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import { IReadonlyTheme } from "@microsoft/sp-component-base";
+import { IcollectionData } from "./components/IDownloadFilesProps";
 export interface IDownloadFilesWebPartProps {
     nameFile: string;
-    collectionData: any[];
+    collectionData: IcollectionData[];
 }
 export default class DownloadFilesWebPart extends BaseClientSideWebPart<IDownloadFilesWebPartProps> {
     private _isDarkTheme;
     private _environmentMessage;
-    private _link;
+    private dirFile;
     render(): void;
     protected onInit(): Promise<void>;
-    private _getUrlLink;
     protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void;
     protected onDispose(): void;
     protected get dataVersion(): Version;
