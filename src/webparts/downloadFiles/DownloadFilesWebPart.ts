@@ -1,19 +1,13 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import { Version } from "@microsoft/sp-core-library";
-import {
-  IPropertyPaneConfiguration,
-  PropertyPaneTextField,
-} from "@microsoft/sp-property-pane";
+import { IPropertyPaneConfiguration, PropertyPaneTextField } from "@microsoft/sp-property-pane";
 import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import { IReadonlyTheme } from "@microsoft/sp-component-base";
 
 import * as strings from "DownloadFilesWebPartStrings";
 import DownloadFiles from "./components/DownloadFiles";
-import {
-  IDownloadFilesProps,
-  IcollectionData,
-} from "./components/IDownloadFilesProps";
+import { IDownloadFilesProps, IcollectionData } from "./components/IDownloadFilesProps";
 
 import {
   PropertyFieldCollectionData,
@@ -29,17 +23,17 @@ export default class DownloadFilesWebPart extends BaseClientSideWebPart<IDownloa
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = "";
   private dirFile: string = "/SiteAssets/files/";
+
   public render(): void {
-    const element: React.ReactElement<IDownloadFilesProps> =
-      React.createElement(DownloadFiles, {
-        absoluteUrl: this.context.pageContext.web.absoluteUrl,
-        isDarkTheme: this._isDarkTheme,
-        environmentMessage: this._environmentMessage,
-        hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName,
-        collectionData: this.properties.collectionData,
-        dirFile: this.dirFile,
-      });
+    const element: React.ReactElement<IDownloadFilesProps> = React.createElement(DownloadFiles, {
+      absoluteUrl: this.context.pageContext.web.absoluteUrl,
+      isDarkTheme: this._isDarkTheme,
+      environmentMessage: this._environmentMessage,
+      hasTeamsContext: !!this.context.sdks.microsoftTeams,
+      userDisplayName: this.context.pageContext.user.displayName,
+      collectionData: this.properties.collectionData,
+      dirFile: this.dirFile,
+    });
 
     ReactDom.render(element, this.domElement);
   }
@@ -57,15 +51,9 @@ export default class DownloadFilesWebPart extends BaseClientSideWebPart<IDownloa
     const { semanticColors } = currentTheme;
 
     if (semanticColors) {
-      this.domElement.style.setProperty(
-        "--bodyText",
-        semanticColors.bodyText || null
-      );
+      this.domElement.style.setProperty("--bodyText", semanticColors.bodyText || null);
       this.domElement.style.setProperty("--link", semanticColors.link || null);
-      this.domElement.style.setProperty(
-        "--linkHovered",
-        semanticColors.linkHovered || null
-      );
+      this.domElement.style.setProperty("--linkHovered", semanticColors.linkHovered || null);
     }
   }
 
@@ -101,6 +89,12 @@ export default class DownloadFilesWebPart extends BaseClientSideWebPart<IDownloa
                     {
                       id: "link",
                       title: "File name",
+                      type: CustomCollectionFieldType.string,
+                      required: true,
+                    },
+                    {
+                      id: "viewMode",
+                      title: "View mode options (simple, custom)",
                       type: CustomCollectionFieldType.string,
                       required: true,
                     },

@@ -10,5 +10,5 @@ export interface IDownloadFilesProps {
 export interface IcollectionData {
   nameFile: string;
   link: string;
-  viewMode: number;
+  viewMode: string;
 }
